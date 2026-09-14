@@ -45,7 +45,7 @@ const SOCIAL_LINKS = [
   {
     name: "GitHub",
     icon: "/assets/socials/github.png",
-    url: "https://github.com/PushkarShinde",
+    url: "https://github.com/Shubhrajyoti65",
     hoverColor: "#6e40c9",
     floatOffset: 8,
     floatDuration: 6,
@@ -54,7 +54,8 @@ const SOCIAL_LINKS = [
   {
     name: "LinkedIn",
     icon: "/assets/socials/linkedIn.svg",
-    url: "https://www.linkedin.com/in/pushkar-shinde-636973221/", 
+    url: "https://www.linkedin.com/in/shubhrajyoti-mohanty-16a074284/", 
+    hoverColor: "#0A66C2",
     floatOffset: 10,
     floatDuration: 5.4,
     floatDelay: 0.8,
@@ -62,7 +63,7 @@ const SOCIAL_LINKS = [
   {
     name: "LeetCode",
     icon: "/assets/socials/leetcode.png",
-    url: "https://leetcode.com/pushkar_shinde/", 
+    url: "https://leetcode.com/u/Shubhrajyoti_Mohanty/", 
     hoverColor: "#FFA116",
     floatOffset: 7,
     floatDuration: 5.8,
@@ -71,36 +72,27 @@ const SOCIAL_LINKS = [
   {
     name: "Codeforces",
     icon: "/assets/socials/codeforces.png",
-    url: "https://codeforces.com/profile/PushkarShinde",
+    url: "https://codeforces.com/profile/Shubh100",
     hoverColor: "#1890FF",
     floatOffset: 9,
     floatDuration: 6.4,
     floatDelay: 0.4,
   },
   {
-    name: "Instagram",
-    icon: "/assets/socials/instagram.svg",
-    url: "https://instagram.com/pushkarshinde__", 
-    hoverColor: "#E1306C",
+    name: "X",
+    icon: "/assets/socials/x.png",
+    url: "https://x.com/SJ_Mohanty02",
+    hoverColor: "#1DA1F2",
     floatOffset: 8,
     floatDuration: 5.2,
     floatDelay: 1.0,
   },
   {
-    name: "X",
-    icon: "/assets/socials/x.png",
-    url: "https://x.com/PushkarShinde16",
-    hoverColor: "#1DA1F2",
-    floatOffset: 10,
-    floatDuration: 4.8,
-    floatDelay: 0.6,
-  },
-  {
-    name: "Spotify",
-    icon: "/assets/socials/spotify.png",
-    url: "https://open.spotify.com/playlist/62VWNYGAoeIO7O4Mkk2tJx?si=8rxIzVKaQi-4SJ0ifVS4fw",
-    hoverColor: "#1DB954",
-    floatOffset: 7,
+    name: "Email",
+    icon: "/assets/copy.svg",
+    url: "mailto:shubhrajyotimohanty2002@gmail.com",
+    hoverColor: "#ea4884",
+    floatOffset: 9,
     floatDuration: 5.6,
     floatDelay: 1.2,
   },
@@ -122,7 +114,7 @@ const Portrait = () => (
     <div className="portrait-image-clip">
       <img
         src="/assets/socials/myPhoto.png"
-        alt="Pushkar Shinde — portrait"
+        alt="Shubhrajyoti Mohanty — portrait"
         className="portrait-image"
         draggable={false}
       />

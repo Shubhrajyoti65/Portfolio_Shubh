@@ -5,16 +5,13 @@ import Hero from './sections/Hero'
 import About from './sections/About'
 import Projects from './sections/Projects'
 import { Experiences } from './sections/Experiences'
-import Testimonial from './sections/Testimonial'
 import Contact from './sections/Contact'
 import Footer from './sections/Footer'
 
 function App() {
   const location = useLocation();
 
-  // Handle hash-based scroll when navigating from blog pages back to
-  // homepage sections (e.g. /blog → "About" → /#about). React Router's
-  // BrowserRouter does not auto-scroll to URL hashes on route change.
+  // Handle hash-based scroll when navigating homepage sections
   useEffect(() => {
     if (location.hash) {
       const id = location.hash.replace('#', '');
@@ -35,7 +32,6 @@ function App() {
       <About />
       <Projects />
       <Experiences />
-      {/* <Testimonial/> */}
       <Contact />
       <Footer />
     </div>

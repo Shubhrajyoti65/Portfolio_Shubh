@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion } from "motion/react";
 
-const RESUME_PATH = "/resume/PushkarShinde.pdf";
+const RESUME_PATH = "/resume/Shubhrajyoti_Mohanty_Resume.pdf";
 
 const ResumeModal = ({ closeModal }) => {
   const modalRef = useRef(null);
@@ -70,7 +70,7 @@ const ResumeModal = ({ closeModal }) => {
             {/* Download button */}
             <a
               href={RESUME_PATH}
-              download="PushkarShinde_Resume.pdf"
+              download="Shubhrajyoti_Mohanty_Resume.pdf"
               className="inline-flex items-center gap-2 px-4 py-2 text-xs font-medium text-white transition-all duration-200 rounded-lg sm:text-sm bg-white/10 border border-white/10 hover:bg-white/15 hover:border-white/20 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-white/5 active:translate-y-0"
             >
               <svg
@@ -109,7 +109,7 @@ const ResumeModal = ({ closeModal }) => {
         <div className="relative flex-1 min-h-0 overflow-hidden rounded-b-2xl">
           <iframe
             src={RESUME_PATH}
-            title="Pushkar Shinde — Resume"
+            title="Shubhrajyoti Mohanty — Resume"
             className="w-full h-full border-0"
             style={{ background: "#1a1a2e" }}
           />
@@ -122,7 +122,7 @@ const ResumeModal = ({ closeModal }) => {
               </p>
               <a
                 href={RESUME_PATH}
-                download="PushkarShinde_Resume.pdf"
+                download="Shubhrajyoti_Mohanty_Resume.pdf"
                 className="px-6 py-3 text-sm font-medium text-white rounded-lg bg-white/10 border border-white/10 hover:bg-white/15"
               >
                 Download Resume

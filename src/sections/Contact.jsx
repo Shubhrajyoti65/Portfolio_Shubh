@@ -78,12 +78,35 @@ const Contact = () => {
 
       {/* Enhanced glassmorphic contact card */}
       <div className="contact-card flex flex-col items-center justify-center max-w-md p-7 mx-auto rounded-2xl">
-        <div className="flex flex-col items-start w-full gap-5 mb-10">
+        <div className="flex flex-col items-start w-full gap-4 mb-6">
           <h2 className="text-heading">Let's Talk</h2>
-          <p className="font-normal text-neutral-400">
-            Whether you're looking to build a new Software, improve your existing
-            platform, or bring a unique project to life, I'm happy to collaborate.
+          <p className="font-normal text-neutral-400 text-sm leading-relaxed">
+            Whether you're looking to build AI-driven applications, scalable software solutions, or discuss potential opportunities, feel free to reach out.
           </p>
+
+          {/* Quick Contact Links */}
+          <div className="flex flex-col gap-2 w-full pt-2">
+            <a
+              href="mailto:shubhrajyotimohanty2002@gmail.com"
+              className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg bg-white/5 border border-white/10 text-xs sm:text-sm font-medium text-neutral-200 hover:bg-white/10 hover:border-lavender/40 transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="size-4 text-lavender shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+              <span className="truncate">shubhrajyotimohanty2002@gmail.com</span>
+            </a>
+
+            <a
+              href="https://x.com/SJ_Mohanty02"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg bg-white/5 border border-white/10 text-xs sm:text-sm font-medium text-neutral-200 hover:bg-white/10 hover:border-lavender/40 transition-colors"
+            >
+              <img src="/assets/socials/x.png" className="size-4 shrink-0" alt="X logo" />
+              <span>x.com/SJ_Mohanty02</span>
+            </a>
+          </div>
         </div>
         <form className="w-full" onSubmit={handleSubmit}>
           <div className="mb-5">
@@ -95,7 +118,7 @@ const Contact = () => {
               name="name"
               type="text"
               className="field-input field-input-focus"
-              placeholder="Chinnaswami Muthuswami Venugopal Iyer"
+              placeholder="random"
               autoComplete="name"
               value={formData.name}
               onChange={handleChange}
@@ -111,7 +134,7 @@ const Contact = () => {
               name="email"
               type="email"
               className="field-input field-input-focus"
-              placeholder="venugopaliyer@email.com"
+              placeholder="random.com"
               autoComplete="email"
               value={formData.email}
               onChange={handleChange}
@@ -125,11 +148,10 @@ const Contact = () => {
             <textarea
               id="message"
               name="message"
-              type="text"
               rows="4"
               className="field-input field-input-focus"
-              placeholder="Share your thoughts..."
-              autoComplete="message"
+              placeholder="Share your thoughts or project details..."
+              autoComplete="off"
               value={formData.message}
               onChange={handleChange}
               required
@@ -139,7 +161,7 @@ const Contact = () => {
             type="submit"
             className="contact-submit-btn w-full py-3 text-lg text-center rounded-md cursor-pointer"
           >
-            {!isLoading ? "Send" : "Sending..."}
+            {!isLoading ? "Send Message" : "Sending..."}
           </button>
         </form>
       </div>

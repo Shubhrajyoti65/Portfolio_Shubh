@@ -6,7 +6,7 @@ function HeroText() {
     hidden:{opacity:0, x:-50},
     visible:{opacity:1, x:0}
   }
-  const words = ["Secure", "Modern", "Scalable", "Fast", "Reliable"];
+  const words = ["Intelligent", "Scalable", "AI-Powered", "Robust", "Performant"];
   return (
     <div
       className="z-10 mt-20 text-center md:mt-40 md:text-left rounded-3xl bg-clip-text"
@@ -20,7 +20,7 @@ function HeroText() {
           animate="visible"
           transition={{ delay: 1 }}
         >
-          Hi, I am Pushkar!
+          Hi, I am Shubhrajyoti!
         </motion.h1>
         <div className="flex flex-col items-start">
           <motion.p 
@@ -30,7 +30,7 @@ function HeroText() {
             animate="visible"
             transition={{ delay: 1.2 }}
           >
-            A Developer <br /> Dedicated to Building
+            Full-Stack & AI Developer <br /> Dedicated to Building
           </motion.p>
           <motion.div 
             variants={variants}
@@ -63,7 +63,7 @@ function HeroText() {
           transition={{ delay: 1 }}
           className="text-4xl font-medium"
         >
-          Hi, I am Pushkar!
+          Hi, I am Shubhrajyoti!
         </motion.p>
         <div >
           <motion.p 

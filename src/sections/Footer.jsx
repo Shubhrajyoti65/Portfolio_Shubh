@@ -13,10 +13,10 @@ const Footer = () => {
             href="#home"
             className="text-lg font-semibold tracking-tight text-white transition-colors hover:text-lavender"
           >
-            Pushkar Shinde
+            Shubhrajyoti Mohanty
           </a>
           <p className="text-xs text-neutral-500">
-            Building robust software, one commit at a time.
+            Crafting AI-driven platforms and scalable software systems.
           </p>
         </div>
 
@@ -42,7 +42,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <p className="text-xs text-neutral-500">
-          © {new Date().getFullYear()} Pushkar. All rights reserved.
+          © {new Date().getFullYear()} Shubhrajyoti Mohanty. All rights reserved.
         </p>
       </div>
     </footer>

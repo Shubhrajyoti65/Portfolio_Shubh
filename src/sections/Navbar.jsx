@@ -11,7 +11,8 @@ function Navigation() {
   const sectionLinks = [
     { label: "Home", hash: "home" },
     { label: "About", hash: "about" },
-    { label: "Work", hash: "work" },
+    { label: "Projects", hash: "work" },
+    { label: "Education & Ranks", hash: "experience" },
     { label: "Contact", hash: "contact" },
   ];
 
@@ -30,18 +31,6 @@ function Navigation() {
           )}
         </li>
       ))}
-      <li className="nav-li">
-        <Link
-          to="/blogs"
-          className={`nav-link ${
-            location.pathname.startsWith("/blogs")
-              ? "text-white"
-              : ""
-          }`}
-        >
-          Blogs
-        </Link>
-      </li>
     </ul>
   );
 }
@@ -53,7 +42,7 @@ function Navbar() {
       <div className="mx-auto c-space max-w-7xl">
         <div className="flex items-center justify-between py-2 sm:py-0">
           <Link to="/" className="text-xl font-bold transition-colors text-neutral-400 hover:text-white">
-            Pushkar Shinde
+            Shubhrajyoti Mohanty
           </Link>
 
           <button

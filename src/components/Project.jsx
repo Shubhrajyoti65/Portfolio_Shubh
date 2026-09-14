@@ -9,17 +9,13 @@ const Project = ({
   href,
   image,
   tags,
-  setPreview,
 }) => {
-  // FIX #6: Renamed from `isHidden` (semantically inverted) to `isModalOpen`
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>
       <div
-        className="flex-wrap items-center justify-between py-10 space-y-14 sm:flex sm:space-y-0"
-        onMouseEnter={() => setPreview(image)}
-        onMouseLeave={() => setPreview(null)}
+        className="flex-wrap items-center justify-between py-6 space-y-4 sm:flex sm:space-y-0"
       >
         <div>
           <p className="text-2xl">{title}</p>
@@ -31,7 +27,6 @@ const Project = ({
         </div>
         <button
           onClick={() => {
-            setPreview(null);
             setIsModalOpen(true);
           }}
           className="flex items-center gap-1 cursor-pointer hover-animation"
