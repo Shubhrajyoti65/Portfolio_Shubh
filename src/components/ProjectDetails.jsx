@@ -72,9 +72,9 @@ const ProjectDetails = ({
         <button
           onClick={closeModal}
           aria-label="Close modal"
-          className="absolute z-20 flex items-center justify-center transition-all duration-200 rounded-full cursor-pointer top-4 right-4 size-10 bg-black/40 backdrop-blur-sm border border-white/10 hover:bg-white/15 hover:border-white/25 hover:scale-110 active:scale-95"
+          className="absolute z-20 flex items-center justify-center transition-all duration-200 rounded-full cursor-pointer top-3 right-3 sm:top-4 sm:right-4 size-9 sm:size-10 bg-black/60 backdrop-blur-sm border border-white/15 hover:bg-white/20 hover:scale-105 active:scale-95"
         >
-          <img src="/assets/white-close.jpg" className="size-4 invert brightness-200" alt="Close" />
+          <img src="/assets/white-close.jpg" className="size-3.5 sm:size-4 invert brightness-200" alt="Close" />
         </button>
 
         {/* Project hero image */}
@@ -82,56 +82,56 @@ const ProjectDetails = ({
           <img
             src={image}
             alt={title}
-            className="object-cover w-full h-48 sm:h-64 md:h-72"
+            className="object-cover w-full h-40 sm:h-64 md:h-72"
           />
           {/* Gradient fade at image bottom for smooth text transition */}
-          <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-midnight to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-16 sm:h-20 bg-gradient-to-t from-midnight to-transparent" />
         </div>
 
         {/* Content body */}
-        <div className="p-6 sm:p-8">
+        <div className="p-4 sm:p-8">
           {/* Title */}
           <h3
             id="project-modal-title"
-            className="text-2xl font-bold tracking-tight text-white sm:text-3xl"
+            className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-white pr-8 leading-snug"
           >
             {title}
           </h3>
 
           {/* Main description */}
-          <p className="mt-3 text-base leading-relaxed text-neutral-300">
+          <p className="mt-2.5 sm:mt-3 text-xs sm:text-base leading-relaxed text-neutral-300">
             {description}
           </p>
 
           {/* Sub-descriptions as bullet points */}
-          <ul className="mt-4 space-y-2.5">
+          <ul className="mt-3.5 sm:mt-4 space-y-2 sm:space-y-2.5">
             {subDescription.map((subDesc, index) => (
               <li
                 key={index}
-                className="flex items-start gap-3 text-sm leading-relaxed text-neutral-400"
+                className="flex items-start gap-2.5 sm:gap-3 text-xs sm:text-sm leading-relaxed text-neutral-400"
               >
                 <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-aqua/70" />
-                {subDesc}
+                <span>{subDesc}</span>
               </li>
             ))}
           </ul>
 
           {/* Divider */}
-          <div className="my-6 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+          <div className="my-5 sm:my-6 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
           {/* Footer: tech tags + view project link */}
-          <div className="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center">
+          <div className="flex flex-col items-stretch sm:flex-row sm:items-center sm:justify-between gap-4">
             {/* Tech stack icons with names */}
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap items-center gap-2">
               {tags.map((tag) => (
                 <div
                   key={tag.id}
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 transition-colors duration-200 hover:bg-white/10 hover:border-white/10"
+                  className="flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg bg-white/5 border border-white/5 transition-colors duration-200 hover:bg-white/10"
                 >
                   <img
                     src={tag.path}
                     alt={tag.name}
-                    className="size-5"
+                    className="size-4 sm:size-5"
                   />
                   <span className="text-xs font-medium text-neutral-300">
                     {tag.name}
@@ -140,12 +140,12 @@ const ProjectDetails = ({
               ))}
             </div>
 
-            {/* FIX #4: href is now correctly on the <a> tag, not on the <img> */}
+            {/* View project link */}
             <a
               href={href || "#"}
               target={href ? "_blank" : undefined}
               rel={href ? "noopener noreferrer" : undefined}
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-white transition-all duration-200 rounded-lg bg-white/10 border border-white/10 hover:bg-white/15 hover:border-white/20 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-white/5 active:translate-y-0 shrink-0"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium text-white transition-all duration-200 rounded-lg bg-white/10 border border-white/10 hover:bg-white/15 hover:border-white/20 active:translate-y-0 shrink-0 w-full sm:w-auto"
             >
               View Project
               <img

@@ -26,7 +26,7 @@ function App() {
   }, [location]);
 
   return (
-    <div className='container mx-auto max-w-7xl'>
+    <div className='container mx-auto max-w-7xl w-full overflow-x-hidden min-h-screen'>
       <Navbar />
       <Hero />
       <About />

@@ -13,15 +13,15 @@ function About() {
       <h2 className='text-heading'>About Me</h2>
       <div className='grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[minmax(10rem,auto)] mt-12'>
         {/* Grid 1 */}
-        <div className='flex items-end grid-cinematic-bg grid-1 p-6 md:p-8'>
+        <div className='flex flex-col justify-start grid-cinematic-bg grid-1 p-5 sm:p-6 md:p-8 custom-scrollbar'>
           <img
             src="/assets/coding-pov.png"
             alt="Profile background"
-            className='absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5] opacity-30'
+            className='absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5] opacity-20 pointer-events-none select-none'
           />
-          <div className="z-10 space-y-3">
-            <p className="headtext text-2xl md:text-3xl font-bold text-white">Hi, I'm Shubhrajyoti Mohanty</p>
-            <div className="subtext text-neutral-300 text-sm md:text-base leading-relaxed space-y-3">
+          <div className="z-10 space-y-3 pr-1">
+            <p className="headtext text-xl sm:text-2xl md:text-3xl font-bold text-white">Hi, I'm Shubhrajyoti Mohanty</p>
+            <div className="subtext text-neutral-300 text-xs sm:text-sm md:text-base leading-relaxed space-y-3">
               <p>
                 An <span className="text-white font-medium">MCA student at MNNIT Allahabad</span> with a background in <span className="text-white font-medium">Physics Honours from Utkal University</span>.
               </p>
@@ -36,7 +36,6 @@ function About() {
               </p>
             </div>
           </div>
-          <div className='absolute inset-x-0 pointer-events-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-[#06060e]' />
         </div>
 
         {/* Grid 2 — Profile portrait with social presence constellation */}
@@ -45,29 +44,29 @@ function About() {
         </div>
 
         {/* Grid 3 */}
-        <div className='grid-constellation-bg grid-3'>
-          <div className='z-10 w-[50%]'>
-            <p className='headtext'>Time Zone</p>
-            <p className='subtext'>
+        <div className='grid-constellation-bg grid-3 relative overflow-hidden flex flex-col justify-between p-5 sm:p-6'>
+          <div className='z-10 max-w-[65%] sm:max-w-[55%] md:w-[50%]'>
+            <p className='headtext text-lg sm:text-xl font-bold text-white'>Time Zone</p>
+            <p className='subtext text-xs sm:text-sm md:text-base'>
               <span className="text-gray-400 font-medium">
                 I am based in <span className="text-white font-medium">India</span> (IST), open to opportunities <span className="text-white font-medium">worldwide</span>.
               </span>
-              </p>
+            </p>
           </div>
-          <figure className='absolute left-[30%] top-[10%]'>
+          <figure className='absolute -right-8 sm:right-0 md:left-[30%] -bottom-10 sm:-bottom-8 md:top-[10%] pointer-events-none'>
             <Globe />
           </figure>
         </div>
 
         {/* Grid 4 */}
-        <div className='grid-cta-bg grid-4'>
+        <div className='grid-cta-bg grid-4 p-6'>
           <div className="flex flex-col items-center justify-center gap-4 size-full">
-            <p className="text-center headtext">
+            <p className="text-center headtext text-xl sm:text-2xl font-bold text-white">
               Hire Me?
             </p>
             <button
               onClick={() => setIsResumeOpen(true)}
-              className="relative z-10 px-1 py-4 text-sm text-center rounded-full font-extralight bg-primary w-[12rem] cursor-pointer overflow-hidden flex items-center justify-center gap-2 hover:-translate-y-1 transition-transform duration-200"
+              className="relative z-10 px-5 py-3.5 text-sm text-center rounded-full font-medium bg-primary w-[12rem] cursor-pointer overflow-hidden flex items-center justify-center gap-2 hover:-translate-y-1 transition-transform duration-200 active:scale-95 shadow-lg shadow-black/30"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +90,7 @@ function About() {
         </div>
 
         {/* Grid 5 — Tech Stack & Core Competencies */}
-        <div className='grid-starfield-bg grid-5 p-6 md:p-8 flex flex-col justify-between overflow-y-auto max-h-[32rem] md:max-h-full'>
+        <div className='grid-starfield-bg grid-5 p-5 sm:p-6 md:p-8 flex flex-col justify-between overflow-visible md:overflow-y-auto md:max-h-full'>
           <div className="z-10 w-full mb-4">
             <p className="headtext text-xl md:text-2xl font-bold text-white mb-1">Tech Stack & Core Competencies</p>
             <p className="subtext text-xs md:text-sm text-neutral-400">

@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { Link, useLocation } from "react-router-dom";
 
-function Navigation() {
+function Navigation({ onItemClick }) {
   const location = useLocation();
   const isHome = location.pathname === "/";
 
@@ -13,20 +13,37 @@ function Navigation() {
     { label: "About", hash: "about" },
     { label: "Projects", hash: "work" },
     { label: "Education & Ranks", hash: "experience" },
+    { label: "Blogs", path: "/blogs" },
     { label: "Contact", hash: "contact" },
   ];
 
   return (
     <ul className="nav-ul">
-      {sectionLinks.map(({ label, hash }) => (
-        <li key={hash} className="nav-li">
-          {isHome ? (
-            <a href={`#${hash}`} className="nav-link">
-              {label}
+      {sectionLinks.map((item) => (
+        <li key={item.hash || item.path} className="nav-li">
+          {item.path ? (
+            <Link
+              to={item.path}
+              onClick={onItemClick}
+              className="nav-link"
+            >
+              {item.label}
+            </Link>
+          ) : isHome ? (
+            <a
+              href={`#${item.hash}`}
+              onClick={onItemClick}
+              className="nav-link"
+            >
+              {item.label}
             </a>
           ) : (
-            <Link to={`/#${hash}`} className="nav-link">
-              {label}
+            <Link
+              to={`/#${item.hash}`}
+              onClick={onItemClick}
+              className="nav-link"
+            >
+              {item.label}
             </Link>
           )}
         </li>
@@ -37,17 +54,23 @@ function Navigation() {
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <div className="fixed inset-x-0 z-20 w-full backdrop-blur-lg bg-primary/40">
+    <div className="fixed inset-x-0 top-0 z-40 w-full backdrop-blur-lg bg-primary/70 border-b border-white/5">
       <div className="mx-auto c-space max-w-7xl">
-        <div className="flex items-center justify-between py-2 sm:py-0">
-          <Link to="/" className="text-xl font-bold transition-colors text-neutral-400 hover:text-white">
+        <div className="flex items-center justify-between py-3 sm:py-3.5">
+          <Link
+            to="/"
+            onClick={() => setIsMenuOpen(false)}
+            className="text-lg sm:text-xl font-bold transition-colors text-neutral-200 hover:text-white truncate max-w-[220px] sm:max-w-none"
+          >
             Shubhrajyoti Mohanty
           </Link>
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="flex cursor-pointer text-neutral-400 hover:text-white focus:outline-none sm:hidden"
+            aria-label="Toggle navigation menu"
+            className="flex items-center justify-center p-2 rounded-lg cursor-pointer text-neutral-400 hover:text-white hover:bg-white/5 focus:outline-none sm:hidden min-w-[44px] min-h-[44px]"
           >
             <img
               src={isMenuOpen ? "/assets/close.svg" : "/assets/menu.svg"}
@@ -56,27 +79,29 @@ function Navbar() {
             />
           </button>
 
-          <nav className='hidden sm:flex'>
+          <nav className="hidden sm:flex">
             <Navigation />
           </nav>
         </div>
       </div>
 
-      {isMenuOpen && (
-        <motion.div
-          className='block overflow-hidden text-center sm:hidden'
-          initial={{ opacity: 0, x: -10 }}
-          animate={{ opacity: 1, x: 0 }}
-          style={{ maxHeight: '100vh' }}
-          transition={{ duration: 0.75 }}
-        >
-          <nav className="pb-5">
-            <Navigation />
-          </nav>
-        </motion.div>
-      )}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            className="block sm:hidden bg-midnight/95 backdrop-blur-xl border-b border-white/10 shadow-2xl px-6 py-4"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+          >
+            <nav className="pb-2">
+              <Navigation onItemClick={() => setIsMenuOpen(false)} />
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
-  )
+  );
 }
 
 export default Navbar;

@@ -58,7 +58,7 @@ const ResumeModal = ({ closeModal }) => {
         }}
       >
         {/* Header bar — title + actions */}
-        <div className="flex items-center justify-between px-5 py-3.5 border-b border-white/10 shrink-0">
+        <div className="flex items-center justify-between px-4 sm:px-5 py-3 sm:py-3.5 border-b border-white/10 shrink-0">
           <h3
             id="resume-modal-title"
             className="text-base font-semibold tracking-tight text-white sm:text-lg"
@@ -66,16 +66,31 @@ const ResumeModal = ({ closeModal }) => {
             Resume
           </h3>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            {/* Open in new tab (ideal for mobile devices) */}
+            <a
+              href={RESUME_PATH}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-white transition-all duration-200 rounded-lg sm:text-sm bg-white/10 border border-white/10 hover:bg-white/15 active:scale-95 shrink-0"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="size-3.5 sm:size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              <span>Open</span>
+            </a>
+
             {/* Download button */}
             <a
               href={RESUME_PATH}
               download="Shubhrajyoti_Mohanty_Resume.pdf"
-              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-medium text-white transition-all duration-200 rounded-lg sm:text-sm bg-white/10 border border-white/10 hover:bg-white/15 hover:border-white/20 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-white/5 active:translate-y-0"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-white transition-all duration-200 rounded-lg sm:text-sm bg-white/10 border border-white/10 hover:bg-white/15 active:scale-95 shrink-0"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="size-4"
+                className="size-3.5 sm:size-4"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -87,22 +102,35 @@ const ResumeModal = ({ closeModal }) => {
                 <polyline points="7 10 12 15 17 10" />
                 <line x1="12" y1="15" x2="12" y2="3" />
               </svg>
-              Download
+              <span className="hidden sm:inline">Download</span>
             </a>
 
             {/* Close button */}
             <button
               onClick={closeModal}
               aria-label="Close modal"
-              className="flex items-center justify-center transition-all duration-200 rounded-full cursor-pointer size-9 bg-black/40 backdrop-blur-sm border border-white/10 hover:bg-white/15 hover:border-white/25 hover:scale-110 active:scale-95"
+              className="flex items-center justify-center transition-all duration-200 rounded-full cursor-pointer size-8 sm:size-9 bg-black/40 backdrop-blur-sm border border-white/10 hover:bg-white/15 active:scale-95 ml-1"
             >
               <img
                 src="/assets/white-close.jpg"
-                className="size-4 invert brightness-200"
+                className="size-3.5 sm:size-4 invert brightness-200"
                 alt="Close"
               />
             </button>
           </div>
+        </div>
+
+        {/* Mobile notice banner for mobile browsers */}
+        <div className="flex sm:hidden items-center justify-between px-4 py-2 bg-white/5 border-b border-white/5 text-xs text-neutral-400">
+          <span>Trouble viewing inline on phone?</span>
+          <a
+            href={RESUME_PATH}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-aqua font-medium underline"
+          >
+            View Fullscreen
+          </a>
         </div>
 
         {/* PDF Viewer */}

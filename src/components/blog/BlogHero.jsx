@@ -7,9 +7,9 @@ const BlogHero = () => {
   };
 
   return (
-    <section className="c-space pt-32 pb-8 md:pt-40 md:pb-12">
+    <section className="c-space pt-24 pb-6 sm:pt-32 sm:pb-8 md:pt-40 md:pb-12">
       <motion.h1
-        className="font-syne font-bold text-5xl md:text-7xl text-white"
+        className="font-syne font-bold text-4xl sm:text-5xl md:text-7xl text-white tracking-tight"
         variants={variants}
         initial="hidden"
         animate="visible"

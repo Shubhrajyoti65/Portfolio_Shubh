@@ -77,18 +77,18 @@ const Contact = () => {
       {showAlert && <Alert type={alertType} text={alertMessage} />}
 
       {/* Enhanced glassmorphic contact card */}
-      <div className="contact-card flex flex-col items-center justify-center max-w-md p-7 mx-auto rounded-2xl">
-        <div className="flex flex-col items-start w-full gap-4 mb-6">
+      <div className="contact-card flex flex-col items-center justify-center w-full max-w-md p-5 sm:p-7 mx-auto rounded-2xl">
+        <div className="flex flex-col items-start w-full gap-3 sm:gap-4 mb-6">
           <h2 className="text-heading">Let's Talk</h2>
-          <p className="font-normal text-neutral-400 text-sm leading-relaxed">
+          <p className="font-normal text-neutral-400 text-xs sm:text-sm leading-relaxed">
             Whether you're looking to build AI-driven applications, scalable software solutions, or discuss potential opportunities, feel free to reach out.
           </p>
 
           {/* Quick Contact Links */}
-          <div className="flex flex-col gap-2 w-full pt-2">
+          <div className="flex flex-col gap-2 w-full pt-1">
             <a
               href="mailto:shubhrajyotimohanty2002@gmail.com"
-              className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg bg-white/5 border border-white/10 text-xs sm:text-sm font-medium text-neutral-200 hover:bg-white/10 hover:border-lavender/40 transition-colors"
+              className="flex items-center gap-2.5 px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-lg bg-white/5 border border-white/10 text-xs sm:text-sm font-medium text-neutral-200 hover:bg-white/10 hover:border-lavender/40 transition-colors min-w-0"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="size-4 text-lavender shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect width="20" height="16" x="2" y="4" rx="2"/>
@@ -101,15 +101,15 @@ const Contact = () => {
               href="https://x.com/SJ_Mohanty02"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg bg-white/5 border border-white/10 text-xs sm:text-sm font-medium text-neutral-200 hover:bg-white/10 hover:border-lavender/40 transition-colors"
+              className="flex items-center gap-2.5 px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-lg bg-white/5 border border-white/10 text-xs sm:text-sm font-medium text-neutral-200 hover:bg-white/10 hover:border-lavender/40 transition-colors min-w-0"
             >
               <img src="/assets/socials/x.png" className="size-4 shrink-0" alt="X logo" />
-              <span>x.com/SJ_Mohanty02</span>
+              <span className="truncate">x.com/SJ_Mohanty02</span>
             </a>
           </div>
         </div>
         <form className="w-full" onSubmit={handleSubmit}>
-          <div className="mb-5">
+          <div className="mb-4 sm:mb-5">
             <label htmlFor="name" className="field-label">
               Full Name
             </label>
@@ -118,14 +118,14 @@ const Contact = () => {
               name="name"
               type="text"
               className="field-input field-input-focus"
-              placeholder="random"
+              placeholder="Your name"
               autoComplete="name"
               value={formData.name}
               onChange={handleChange}
               required
             />
           </div>
-          <div className="mb-5">
+          <div className="mb-4 sm:mb-5">
             <label htmlFor="email" className="field-label">
               Email
             </label>
@@ -134,14 +134,14 @@ const Contact = () => {
               name="email"
               type="email"
               className="field-input field-input-focus"
-              placeholder="random.com"
+              placeholder="you@example.com"
               autoComplete="email"
               value={formData.email}
               onChange={handleChange}
               required
             />
           </div>
-          <div className="mb-5">
+          <div className="mb-4 sm:mb-5">
             <label htmlFor="message" className="field-label">
               Message
             </label>
@@ -159,7 +159,7 @@ const Contact = () => {
           </div>
           <button
             type="submit"
-            className="contact-submit-btn w-full py-3 text-lg text-center rounded-md cursor-pointer"
+            className="contact-submit-btn w-full py-3.5 text-base sm:text-lg font-medium text-center rounded-lg cursor-pointer active:scale-98 transition-transform"
           >
             {!isLoading ? "Send Message" : "Sending..."}
           </button>

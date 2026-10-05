@@ -9,7 +9,7 @@ function HeroText() {
   const words = ["Intelligent", "Scalable", "AI-Powered", "Robust", "Performant"];
   return (
     <div
-      className="z-10 mt-20 text-center md:mt-40 md:text-left rounded-3xl bg-clip-text"
+      className="z-10 mt-24 text-center md:mt-40 md:text-left rounded-3xl bg-clip-text w-full max-w-full overflow-hidden"
     >
       {/* {desktop view} */}
       <div className="flex-col hidden md:flex c-space">
@@ -55,23 +55,23 @@ function HeroText() {
       </div>
 
       {/* {mobile view} */}
-      <div className="flex flex-col space-y-6 md:hidden">
+      <div className="flex flex-col space-y-4 sm:space-y-6 md:hidden px-2 max-w-full">
         <motion.p 
           variants={variants}
           initial="hidden"
           animate="visible"
           transition={{ delay: 1 }}
-          className="text-4xl font-medium"
+          className="text-2xl sm:text-3xl font-medium tracking-tight text-white"
         >
           Hi, I am Shubhrajyoti!
         </motion.p>
-        <div >
+        <div>
           <motion.p 
             variants={variants}
             initial="hidden"
             animate="visible"
             transition={{ delay: 1.2 }}
-            className="text-5xl font-black text-neutral-300"
+            className="text-3xl sm:text-4xl font-black text-neutral-300"
           >
             Building
           </motion.p>
@@ -80,10 +80,11 @@ function HeroText() {
             initial="hidden"
             animate="visible"
             transition={{ delay: 1.5 }}
+            className="my-1 sm:my-2"
           >
             <FlipWords 
               words={words}
-              className="text-white font-bold text-7xl"
+              className="text-white font-black text-4xl sm:text-5xl"
             />
           </motion.div>
           <motion.p 
@@ -91,7 +92,7 @@ function HeroText() {
             initial="hidden"
             animate="visible"
             transition={{ delay: 1.8 }}
-            className="text-4xl font-black text-neutral-300"
+            className="text-2xl sm:text-3xl font-black text-neutral-300"
           >
             Software Solutions
           </motion.p>
