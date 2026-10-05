@@ -619,6 +619,13 @@ body {
   padding: 0.45rem 0.5rem;
 }
 
+.constellation-mobile .social-badge:nth-child(5):last-child {
+  grid-column: span 2 / span 2;
+  width: auto;
+  max-width: 9.5rem;
+  margin: 0 auto;
+}
+
 /* ── Desktop badge positions (absolute within constellation) ────
    To reposition a badge, adjust the top/bottom/left/right values.
    nth-child counts ONLY .social-badge siblings; the Portrait and
@@ -649,19 +656,9 @@ body {
   top: 50%;
   right: 0%;
 }
-/* Instagram — bottom-left */
+/* X — bottom-center */
 .constellation-desktop .social-badge:nth-child(10) {
   bottom: 8%;
-  left: 12%;
-}
-/* X — bottom-right */
-.constellation-desktop .social-badge:nth-child(11) {
-  bottom: 10%;
-  right: 10%;
-}
-/* Spotify — bottom-center (below portrait) */
-.constellation-desktop .social-badge:nth-child(12) {
-  bottom: 6%;
   left: 50%;
   transform: translateX(-50%);
 }
