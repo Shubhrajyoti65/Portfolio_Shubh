@@ -87,6 +87,15 @@ const SOCIAL_LINKS = [
     floatDuration: 5.2,
     floatDelay: 1.0,
   },
+  {
+    name: "Email",
+    icon: "/assets/copy.svg",
+    url: "mailto:shubhrajyotimohanty2002@gmail.com",
+    hoverColor: "#ea4884",
+    floatOffset: 9,
+    floatDuration: 5.6,
+    floatDelay: 1.2,
+  },
 ];
 
 /* ── Ambient floating particle (decorative) ──────────────────────── */

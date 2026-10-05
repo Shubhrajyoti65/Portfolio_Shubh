@@ -26,7 +26,7 @@ const BlogPostPage = () => {
       <Navbar />
 
       {/* Centered reading column */}
-      <article className="max-w-[720px] mx-auto c-space pt-24 sm:pt-32 md:pt-40">
+      <article className="max-w-[720px] mx-auto c-space pt-32 md:pt-40">
         <BlogPostHeader post={post} />
         <BlogPostContent content={post.content} />
       </article>

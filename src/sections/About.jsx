@@ -13,7 +13,7 @@ function About() {
       <h2 className='text-heading'>About Me</h2>
       <div className='grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[minmax(10rem,auto)] mt-12'>
         {/* Grid 1 */}
-        <div className='flex flex-col justify-start grid-cinematic-bg grid-1 p-5 sm:p-6 md:p-8 custom-scrollbar'>
+        <div className='flex flex-col justify-start grid-cinematic-bg grid-1 p-5 sm:p-6 md:p-8 custom-scrollbar overflow-y-auto'>
           <img
             src="/assets/coding-pov.png"
             alt="Profile background"

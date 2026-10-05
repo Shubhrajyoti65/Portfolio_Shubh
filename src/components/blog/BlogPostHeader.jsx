@@ -46,7 +46,7 @@ const BlogPostHeader = ({ post }) => {
       </div>
 
       {/* Title */}
-      <h1 className="mt-4 sm:mt-5 font-syne font-bold text-2xl sm:text-3xl md:text-5xl text-white leading-snug">
+      <h1 className="mt-5 font-syne font-bold text-3xl md:text-5xl text-white leading-tight">
         {post.title}
       </h1>
 

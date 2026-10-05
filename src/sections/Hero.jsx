@@ -11,26 +11,25 @@ import Loader from '../components/Loader';
 import ScrollIndicator from '../components/ScrollIndicator';
 
 function Hero() {
-  const isMobile = useMediaQuery({ maxWidth: 850 });
-  const isSmallMobile = useMediaQuery({ maxWidth: 480 });
-
+  const isMobile = useMediaQuery({ maxWidth: 850 }); // Adjust the breakpoint as needed
   return (
     <section
       id="home"
-      className="relative flex items-start justify-center md:items-start md:justify-start min-h-screen c-space overflow-hidden"
+      className="flex items-start justify-center md:item-start md:justify-start min-h-screen  c-space"
     >
       <HeroText />
       <ParallaxBackground />
       <figure 
-        className="absolute inset-0 pointer-events-none w-full h-full"
+        className="absolute inset-0"
+        style={{ width: '100vw', height: '100vh'}}
       >
         <Canvas camera={{ position: [0, 1, 3] }}>
           <Suspense fallback={<Loader/>}>
              {/* Suspense is used to handle the loading state of the 3D model. It allows you to show a fallback (like a loader) while the model is being loaded, preventing any rendering issues or errors that might occur if the model takes time to load. */}
             <Float>
               <Astronaut 
-                scale={isSmallMobile ? 0.17 : isMobile ? 0.22 : 0.3}
-                position={isSmallMobile ? [0, -1.6, 0] : isMobile ? [0, -1.5, 0] : [1.3, -1, 0]}
+                scale={isMobile ? 0.23 : 0.3}
+                position={isMobile ? [0, -1.5, 0] : [1.3, -1, 0]}
               />
             </Float>
 

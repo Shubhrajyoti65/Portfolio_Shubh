@@ -108,9 +108,8 @@ export function Globe({ className, config = GLOBE_CONFIG }) {
     >
       <canvas
         className={twMerge(
-          "size-[18rem] sm:size-[24rem] md:size-[30rem] max-w-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
+          "size-[30rem] opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
         )}
-        style={{ touchAction: "pan-y" }}
         ref={canvasRef}
         onPointerDown={(e) => {
           pointerInteracting.current = e.clientX;
