@@ -13,13 +13,13 @@ function About() {
       <h2 className='text-heading'>About Me</h2>
       <div className='grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[minmax(10rem,auto)] mt-12'>
         {/* Grid 1 */}
-        <div className='flex flex-col justify-start grid-cinematic-bg grid-1 p-5 sm:p-6 md:p-8 custom-scrollbar overflow-y-auto'>
+        <div className='grid-cinematic-bg grid-1 relative overflow-hidden !p-0'>
           <img
             src="/assets/coding-pov.png"
             alt="Profile background"
             className='absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5] opacity-20 pointer-events-none select-none'
           />
-          <div className="z-10 space-y-3 pr-1">
+          <div className="relative z-10 w-full h-full overflow-y-auto custom-scrollbar p-5 sm:p-6 md:p-8 space-y-3 overscroll-contain">
             <p className="headtext text-xl sm:text-2xl md:text-3xl font-bold text-white">Hi, I'm Shubhrajyoti Mohanty</p>
             <div className="subtext text-neutral-300 text-xs sm:text-sm md:text-base leading-relaxed space-y-3">
               <p>

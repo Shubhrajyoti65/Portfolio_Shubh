@@ -139,26 +139,31 @@ body {
 /* Custom Scrollbar */
 .custom-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: rgba(122, 87, 219, 0.45) rgba(255, 255, 255, 0.04);
+  scrollbar-color: rgba(168, 85, 247, 0.65) rgba(255, 255, 255, 0.05);
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto !important;
 }
 .custom-scrollbar::-webkit-scrollbar {
-  width: 5px;
+  width: 6px;
+  display: block;
 }
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 9999px;
+  margin: 8px 0;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(122, 87, 219, 0.45);
+  background: rgba(168, 85, 247, 0.65);
   border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(122, 87, 219, 0.75);
+  background: rgba(168, 85, 247, 0.9);
 }
 
 /* About Section */
 .grid-1 {
-  @apply row-span-2 md:col-span-3 h-[20rem] sm:h-[24rem] md:h-full relative overflow-y-auto hover:-translate-y-1 duration-200;
+  @apply row-span-2 md:col-span-3 h-[20rem] sm:h-[24rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200 !p-0;
 }
 .grid-2 {
   @apply row-span-1 md:col-span-3 min-h-[22rem] h-auto md:h-[22rem] relative overflow-hidden hover:-translate-y-1 duration-200;
